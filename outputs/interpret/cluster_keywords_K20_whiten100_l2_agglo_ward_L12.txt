@@ -1,0 +1,63 @@
+# Cluster keywords, Layer 12
+# Sorted by cluster size (largest first)
+
+cluster  1  (n= 569)  major: rec.motorcycles (11%)
+  top words: dos, mhz, car, inches, monitor, mpc, bible, god
+
+cluster  2  (n= 235)  major: talk.politics.misc (22%)
+  top words: myers, kinsey, fbi, sex, law, government, reisman, dee
+
+cluster  4  (n= 171)  major: comp.graphics (27%)
+  top words: image, graphics, color, gif, windows, file, files, format
+
+cluster  5  (n= 106)  major: soc.religion.christian (43%)
+  top words: god, church, jesus, christ, revelation, religion, christian, beliefs
+
+cluster 10  (n=  99)  major: sci.electronics (30%)
+  top words: larson, universe, battery, theory, unified, motion, physical, physicist
+
+cluster  8  (n=  94)  major: comp.windows.x (32%)
+  top words: widget, motif, window, dod, widgets, server, contrib, mit
+
+cluster  0  (n=  90)  major: talk.politics.mideast (77%)
+  top words: armenian, kuwait, turkish, armenians, professor, arab, israel, turkey
+
+cluster  3  (n=  82)  major: comp.os.ms-windows.misc (27%)
+  top words: echo, windows, hostname, remote, pwd, dos, xterm, int
+
+cluster  9  (n=  70)  major: misc.forsale (39%)
+  top words: file, gun, congress, firearms, rkba, handgun, amendment, states
+
+cluster 19  (n=  68)  major: rec.sport.hockey (94%)
+  top words: game, flyers, puck, sabres, hockey, shots, team, nhl
+
+cluster 17  (n=  66)  major: sci.med (85%)
+  top words: nutrition, kidney, clinical, calcium, thyroid, diet, depression, physician
+
+cluster  7  (n=  65)  major: sci.med (12%)
+  top words: dram, temp, gauge, doublespace, email, dos, gordon, bike
+
+cluster 11  (n=  63)  major: comp.sys.ibm.pc.hardware (43%)
+  top words: controller, bus, card, interrupt, irq, ide, isa, modem
+
+cluster  6  (n=  50)  major: rec.sport.baseball (100%)
+  top words: clemens, team, morris, hitter, tomlin, game, games, pitching
+
+cluster 16  (n=  44)  major: rec.autos (77%)
+  top words: car, sho, engine, ford, audi, shifter, cranston, cars
+
+cluster 13  (n=  40)  major: sci.space (98%)
+  top words: lunar, tele, shuttle, moon, balloon, spacecraft, atmosphere, flight
+
+cluster 14  (n=  36)  major: sci.crypt (92%)
+  top words: encryption, clipper, nsa, escrow, des, chip, wiretap, keys
+
+cluster 15  (n=  25)  major: soc.religion.christian (60%)
+  top words: jesus, matthew, law, lord, prophecy, mary, god, psalm
+
+cluster 12  (n=  15)  major: talk.politics.misc (20%)
+  top words: hiv, image, graphics, pub, aids, ftp, images, ray
+
+cluster 18  (n=  12)  major: sci.electronics (25%)
+  top words: stepper, steppers, inqmind, bari, inspiration, network, seek, unknown
+

@@ -1,0 +1,33 @@
+# Cluster keywords, Layer 12
+# Sorted by cluster size (largest first)
+
+cluster  2  (n= 263)  major: talk.politics.mideast (30%)
+  top words: kuwait, armenian, turkish, armenians, government, myers, kinsey, professor
+
+cluster  5  (n= 248)  major: comp.windows.x (33%)
+  top words: widget, graphics, window, windows, motif, server, application, ftp
+
+cluster  8  (n= 246)  major: comp.sys.ibm.pc.hardware (29%)
+  top words: dos, windows, card, modem, scsi, controller, mhz, disk
+
+cluster  4  (n= 237)  major: misc.forsale (10%)
+  top words: gun, congress, rkba, firearms, handgun, amendment, amend, copies
+
+cluster  3  (n= 211)  major: soc.religion.christian (39%)
+  top words: jesus, church, matthew, fallacy, christian, prophecy, christ, law
+
+cluster  6  (n= 197)  major: sci.space (42%)
+  top words: larson, universe, lunar, satellites, shuttle, physical, spacecraft, earth
+
+cluster  0  (n= 185)  major: rec.motorcycles (42%)
+  top words: bike, engine, cars, gear, sho, ford, insurance, bmw
+
+cluster  7  (n= 174)  major: rec.sport.baseball (50%)
+  top words: game, puck, players, flyers, hockey, season, games, sabres
+
+cluster  9  (n= 127)  major: sci.med (64%)
+  top words: hiv, aids, cancer, patients, clinical, health, infected, physician
+
+cluster  1  (n= 112)  major: misc.forsale (9%)
+  top words: dod, motif, ftp, widget, server, contrib, export, tar
+

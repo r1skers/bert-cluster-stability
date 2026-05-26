@@ -1,0 +1,153 @@
+# Cluster keywords, Layer 12
+# Sorted by cluster size (largest first)
+
+cluster  2  (n=  61)  major: comp.windows.x (51%)
+  top words: motif, contrib, export, widget, tar, server, mit, ftp
+
+cluster  3  (n=  57)  major: sci.electronics (14%)
+  top words: file, gun, congress, firearms, rkba, handgun, amendment, control
+
+cluster 12  (n=  57)  major: comp.graphics (42%)
+  top words: gif, windows, file, format, files, graphics, ftp, software
+
+cluster 10  (n=  56)  major: rec.sport.baseball (98%)
+  top words: team, morris, hitter, clemens, tomlin, games, baseball, pitcher
+
+cluster 25  (n=  56)  major: comp.graphics (39%)
+  top words: image, video, bits, display, color, menu, graphics, program
+
+cluster 15  (n=  55)  major: comp.sys.ibm.pc.hardware (47%)
+  top words: card, controller, windows, bus, irq, dos, isa, disk
+
+cluster 14  (n=  52)  major: alt.atheism (23%)
+  top words: theism, fanatism, statements, statement, rational, gun, fred, belief
+
+cluster 27  (n=  49)  major: comp.windows.x (49%)
+  top words: widget, window, motif, echo, visual, resource, widgets, xlib
+
+cluster 24  (n=  48)  major: rec.sport.baseball (17%)
+  top words: pray, company, sex, lunch, amp, ampere, prayers, desk
+
+cluster 26  (n=  48)  major: sci.med (17%)
+  top words: dram, doublespace, gordon, shameful, surrender, banks, settings, liverpool
+
+cluster 47  (n=  48)  major: sci.med (90%)
+  top words: nutrition, kidney, cancer, calcium, clinical, thyroid, depression, msg
+
+cluster 13  (n=  47)  major: rec.motorcycles (79%)
+  top words: bike, riding, ride, pressure, bikes, oil, canseco, squids
+
+cluster 18  (n=  47)  major: soc.religion.christian (47%)
+  top words: fallacy, argument, god, premises, argumentum, conclusion, inference, example
+
+cluster 17  (n=  46)  major: rec.autos (65%)
+  top words: car, sho, ford, shifter, gear, miles, engine, cars
+
+cluster 29  (n=  45)  major: talk.politics.guns (31%)
+  top words: militia, law, guard, radar, federal, amendment, detector, states
+
+cluster 36  (n=  45)  major: talk.politics.misc (27%)
+  top words: kinsey, reisman, sex, sexual, eichel, taoism, culture, orientation
+
+cluster 45  (n=  45)  major: sci.space (96%)
+  top words: lunar, space, japanese, shuttle, launch, moon, mission, spacecraft
+
+cluster 49  (n=  45)  major: sci.electronics (56%)
+  top words: shims, battery, fuel, batteries, amp, cable, valve, vacuum
+
+cluster 28  (n=  44)  major: rec.sport.hockey (89%)
+  top words: flyers, sabres, hockey, team, puck, players, soderstrom, play
+
+cluster 30  (n=  44)  major: comp.os.ms-windows.misc (41%)
+  top words: windows, borland, dos, midi, guide, microsoft, devguide, version
+
+cluster 16  (n=  43)  major: comp.sys.ibm.pc.hardware (35%)
+  top words: windows, drive, tape, program, cache, dtg, disk, screen
+
+cluster 34  (n=  43)  major: sci.crypt (84%)
+  top words: encryption, key, clipper, des, nsa, chip, escrow, keys
+
+cluster 37  (n=  43)  major: talk.politics.guns (67%)
+  top words: revolver, cranston, gun, teenager, deaths, fbi, semi, gas
+
+cluster 38  (n=  43)  major: soc.religion.christian (67%)
+  top words: jesus, god, law, lord, mary, church, matthew, heaven
+
+cluster 39  (n=  43)  major: sci.electronics (23%)
+  top words: phone, answering, fax, software, logo, modem, washburn, ticket
+
+cluster 44  (n=  43)  major: misc.forsale (60%)
+  top words: spine, shipping, sale, condition, dinks, microtest, lanport, offer
+
+cluster 40  (n=  40)  major: soc.religion.christian (32%)
+  top words: petersen, homosexual, bible, acts, book, homosexuals, iges, ancient
+
+cluster  9  (n=  39)  major: talk.politics.misc (26%)
+  top words: energy, cato, government, institute, wiretap, conservation, cost, policy
+
+cluster 21  (n=  38)  major: rec.autos (18%)
+  top words: insurance, denali, cost, dealer, costs, price, sipps, kpc
+
+cluster  0  (n=  37)  major: talk.politics.mideast (62%)
+  top words: jews, gaza, israeli, gazans, israel, ghetto, population, jewish
+
+cluster  5  (n=  37)  major: comp.sys.mac.hardware (46%)
+  top words: monitor, drive, nanao, scsi, powerbook, upgrade, ide, windows
+
+cluster 22  (n=  37)  major: rec.sport.hockey (78%)
+  top words: game, espn, games, abc, season, playoffs, team, bruins
+
+cluster 31  (n=  37)  major: soc.religion.christian (43%)
+  top words: god, christian, atheists, church, beliefs, atheism, atheist, universe
+
+cluster 32  (n=  37)  major: sci.space (49%)
+  top words: larson, universe, theory, unified, physical, physicist, dewey, physicists
+
+cluster 33  (n=  36)  major: talk.politics.mideast (83%)
+  top words: kuwait, arab, sheikh, israel, armenian, sabah, iraq, kuwaiti
+
+cluster 46  (n=  36)  major: rec.autos (72%)
+  top words: car, audi, turbo, engine, servotronic, engines, ford, volvo
+
+cluster 48  (n=  33)  major: talk.politics.guns (24%)
+  top words: fbi, spectre, raid, arlen, clinton, panama, reno, hostage
+
+cluster  6  (n=  32)  major: comp.sys.ibm.pc.hardware (16%)
+  top words: dod, denizens, motorcycle, muck, doom, motorcycles, kotl, rec
+
+cluster 19  (n=  32)  major: sci.space (31%)
+  top words: frog, turkey, bmw, air, water, inflatable, prizes, cherry
+
+cluster 20  (n=  31)  major: sci.med (42%)
+  top words: cancer, bracelet, burzynski, copper, lithium, macplus, appreciated, bruise
+
+cluster 11  (n=  30)  major: alt.atheism (30%)
+  top words: religious, religion, bible, god, christianity, atheists, logic, bobby
+
+cluster  4  (n=  29)  major: sci.crypt (17%)
+  top words: evidence, gay, liar, das, die, million, theory, martyrdom
+
+cluster  8  (n=  29)  major: sci.med (66%)
+  top words: clubbing, seizure, disorders, godless, ocd, sugar, dilation, muscle
+
+cluster  7  (n=  28)  major: talk.politics.misc (32%)
+  top words: lazy, crime, canseco, notre, quibble, judgments, dame, law
+
+cluster 23  (n=  28)  major: talk.politics.mideast (68%)
+  top words: armenian, turkish, armenians, professor, turkey, turks, armenia, history
+
+cluster  1  (n=  27)  major: comp.sys.mac.hardware (37%)
+  top words: printer, fonts, font, adobe, printers, rao, bubblejet, windows
+
+cluster 43  (n=  25)  major: rec.sport.hockey (36%)
+  top words: dos, shots, pit, inches, mpc, period, nyi, mhz
+
+cluster 41  (n=  21)  major: talk.politics.misc (14%)
+  top words: hiv, image, graphics, pub, aids, images, ftp, ray
+
+cluster 42  (n=  19)  major: sci.electronics (16%)
+  top words: myers, jesus, matthew, dee, prophecy, president, messiah, psalm
+
+cluster 35  (n=   9)  major: talk.religion.misc (22%)
+  top words: rtrace, arj, suit, pub, monitor, svga, scn, champaign
+

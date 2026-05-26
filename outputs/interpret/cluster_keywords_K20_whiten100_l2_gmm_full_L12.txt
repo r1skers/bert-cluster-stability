@@ -1,0 +1,63 @@
+# Cluster keywords, Layer 12
+# Sorted by cluster size (largest first)
+
+cluster 19  (n= 322)  major: rec.sport.baseball (11%)
+  top words: myers, hiv, kinsey, aids, health, reisman, dee, sex
+
+cluster  3  (n= 124)  major: comp.windows.x (32%)
+  top words: image, motif, windows, ftp, contrib, widget, tar, files
+
+cluster 11  (n= 112)  major: rec.autos (51%)
+  top words: car, bike, engine, sho, cars, gear, ford, torque
+
+cluster 14  (n= 110)  major: sci.electronics (27%)
+  top words: modem, card, inches, windows, monitor, port, isa, irq
+
+cluster  1  (n= 108)  major: misc.forsale (28%)
+  top words: dos, mpc, shims, copies, insurance, spine, sale, bought
+
+cluster 13  (n= 103)  major: alt.atheism (36%)
+  top words: god, fallacy, argument, christianity, religion, theism, premises, argumentum
+
+cluster  4  (n= 102)  major: talk.politics.guns (32%)
+  top words: militia, law, gun, government, federal, guns, crime, guard
+
+cluster  6  (n=  98)  major: comp.windows.x (39%)
+  top words: widget, graphics, window, file, motif, visual, pub, echo
+
+cluster 15  (n=  98)  major: talk.politics.mideast (27%)
+  top words: arab, beliefs, god, atheism, jewish, knesset, jews, israel
+
+cluster  7  (n=  93)  major: comp.sys.ibm.pc.hardware (40%)
+  top words: windows, controller, mhz, card, bus, disk, dos, scsi
+
+cluster 12  (n=  84)  major: misc.forsale (12%)
+  top words: file, gun, congress, firearms, rkba, handgun, encryption, amendment
+
+cluster  5  (n=  82)  major: soc.religion.christian (71%)
+  top words: jesus, matthew, god, church, lord, mary, prophecy, disciples
+
+cluster 18  (n=  80)  major: sci.electronics (26%)
+  top words: battery, fuel, energy, batteries, revolver, cato, gas, engines
+
+cluster 10  (n=  76)  major: sci.med (88%)
+  top words: cancer, nutrition, kidney, physician, patients, clinical, calcium, therapy
+
+cluster  2  (n=  75)  major: sci.space (96%)
+  top words: larson, universe, lunar, shuttle, earth, satellites, theory, mars
+
+cluster 17  (n=  72)  major: rec.sport.hockey (96%)
+  top words: puck, flyers, game, hockey, sabres, team, shots, nhl
+
+cluster 16  (n=  69)  major: sci.med (12%)
+  top words: dod, denizens, motorcycles, rec, muck, motorcycle, doom, kotl
+
+cluster  9  (n=  68)  major: sci.crypt (63%)
+  top words: encryption, nsa, clipper, escrow, chip, des, fbi, keys
+
+cluster  0  (n=  65)  major: talk.politics.mideast (92%)
+  top words: armenian, kuwait, turkish, armenians, professor, armenia, turkey, turks
+
+cluster  8  (n=  59)  major: rec.sport.baseball (98%)
+  top words: hitter, clemens, team, morris, tomlin, pitcher, games, baseball
+

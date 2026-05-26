@@ -1,0 +1,11 @@
+cluster_id,size,major_topic,major_topic_fraction,top_3_topics
+2,263,talk.politics.mideast,0.30038022813688214,talk.politics.mideast(79); talk.politics.guns(48); sci.crypt(47)
+5,248,comp.windows.x,0.3346774193548387,comp.windows.x(83); comp.os.ms-windows.misc(66); comp.graphics(55)
+8,246,comp.sys.ibm.pc.hardware,0.2886178861788618,comp.sys.ibm.pc.hardware(71); comp.sys.mac.hardware(61); comp.os.ms-windows.misc(31)
+4,237,misc.forsale,0.10126582278481013,misc.forsale(24); soc.religion.christian(18); alt.atheism(18)
+3,211,soc.religion.christian,0.3886255924170616,soc.religion.christian(82); alt.atheism(53); talk.religion.misc(37)
+6,197,sci.space,0.41624365482233505,sci.space(82); sci.electronics(49); talk.politics.guns(13)
+0,185,rec.motorcycles,0.42162162162162165,rec.motorcycles(78); rec.autos(77); misc.forsale(8)
+7,174,rec.sport.baseball,0.5,rec.sport.baseball(87); rec.sport.hockey(79); misc.forsale(2)
+9,127,sci.med,0.6377952755905512,sci.med(81); talk.politics.misc(7); rec.sport.baseball(5)
+1,112,misc.forsale,0.08928571428571429,misc.forsale(10); comp.windows.x(9); sci.med(8)

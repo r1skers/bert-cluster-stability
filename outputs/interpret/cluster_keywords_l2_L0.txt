@@ -1,0 +1,63 @@
+# Cluster keywords, Layer 0
+# Sorted by cluster size (largest first)
+
+cluster  9  (n= 235)  major: soc.religion.christian (9%)
+  top words: god, point, problem, life, didn, thing, heaven, claim
+
+cluster  6  (n= 202)  major: comp.os.ms-windows.misc (8%)
+  top words: problem, captain, thing, traded, monitor, tyre, bracelet, actually
+
+cluster 10  (n= 177)  major: soc.religion.christian (12%)
+  top words: god, problem, point, isn, thing, didn, different, come
+
+cluster  1  (n= 173)  major: rec.motorcycles (10%)
+  top words: problem, shims, teh, god, haven, key, pointer, seen
+
+cluster  4  (n= 158)  major: comp.sys.mac.hardware (8%)
+  top words: ipas, vmode, god, actually, appreciated, studio, rusty, server
+
+cluster 11  (n= 158)  major: talk.politics.mideast (7%)
+  top words: actually, tell, anybody, judaism, god, probert, ovule, xterms
+
+cluster 13  (n= 151)  major: rec.sport.baseball (12%)
+  top words: problem, hitter, logo, ribbons, hockey, didn, water, care
+
+cluster  0  (n= 139)  major: talk.politics.mideast (24%)
+  top words: armenian, turkish, armenians, professor, fallacy, jesus, larson, law
+
+cluster 14  (n= 131)  major: comp.windows.x (13%)
+  top words: window, fpu, speed, memory, controller, midi, problem, motif
+
+cluster  3  (n=  98)  major: rec.sport.baseball (15%)
+  top words: printer, modem, denies, shit, yeah, americans, ignorance, fallen
+
+cluster  2  (n=  75)  major: comp.graphics (16%)
+  top words: penev, rao, adobe, spigot, patty, pins, sgi, trillion
+
+cluster 15  (n=  59)  major: sci.med (14%)
+  top words: dram, shots, period, saves, temp, gauge, doublespace, leads
+
+cluster 17  (n=  54)  major: comp.windows.x (15%)
+  top words: myers, widget, image, kinsey, jesus, gun, echo, window
+
+cluster 12  (n=  48)  major: comp.sys.ibm.pc.hardware (15%)
+  top words: kuwait, dod, sheikh, contrib, widget, tar, denizens, motif
+
+cluster 19  (n=  45)  major: misc.forsale (33%)
+  top words: mpc, wsh, nyr, edm, mtl, hfd, phi, bos
+
+cluster  5  (n=  41)  major: comp.windows.x (10%)
+  top words: subscribe, eve, grape, sandvik, stacker, gps, horror, needing
+
+cluster  8  (n=  17)  major: sci.electronics (12%)
+  top words: encryption, technology, chip, privacy, protect, escrow, law, enforcement
+
+cluster 16  (n=  15)  major: talk.politics.misc (20%)
+  top words: hiv, pub, aids, rayshade, ray, health, infected, objects
+
+cluster  7  (n=  14)  major: talk.politics.misc (14%)
+  top words: japanese, courses, language, intensive, japan, jstmp, management, technology
+
+cluster 18  (n=  10)  major: talk.religion.misc (20%)
+  top words: rtrace, arj, rootx, dealy, rooty, suit, pub, urbana
+

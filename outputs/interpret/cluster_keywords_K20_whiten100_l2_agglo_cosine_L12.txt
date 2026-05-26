@@ -1,0 +1,63 @@
+# Cluster keywords, Layer 12
+# Sorted by cluster size (largest first)
+
+cluster  5  (n= 290)  major: comp.windows.x (24%)
+  top words: windows, echo, hostname, dos, files, window, display, graphics
+
+cluster  1  (n= 223)  major: soc.religion.christian (40%)
+  top words: jesus, god, matthew, church, christianity, christ, bible, christian
+
+cluster  8  (n= 167)  major: comp.sys.ibm.pc.hardware (34%)
+  top words: dos, card, controller, bus, windows, mhz, inches, irq
+
+cluster  2  (n= 139)  major: alt.atheism (15%)
+  top words: myers, dee, president, theism, japanese, reno, fanatism, god
+
+cluster 11  (n= 139)  major: rec.sport.hockey (47%)
+  top words: team, game, puck, flyers, sabres, games, saves, shots
+
+cluster  9  (n= 116)  major: talk.politics.mideast (47%)
+  top words: armenian, kuwait, turkish, armenians, professor, armenia, arab, israel
+
+cluster  7  (n= 107)  major: sci.crypt (45%)
+  top words: encryption, clipper, key, chip, escrow, government, nsa, des
+
+cluster  4  (n= 101)  major: sci.electronics (32%)
+  top words: battery, midi, batteries, fuel, detector, radar, amp, cable
+
+cluster 14  (n=  97)  major: rec.autos (49%)
+  top words: sho, engine, audi, ford, miles, gear, shifter, bike
+
+cluster 17  (n=  77)  major: misc.forsale (35%)
+  top words: insurance, spine, sale, dinks, costs, offer, shipping, geico
+
+cluster 13  (n=  76)  major: sci.med (83%)
+  top words: nutrition, kidney, physician, clinical, calcium, diet, thyroid, depression
+
+cluster 10  (n=  74)  major: misc.forsale (11%)
+  top words: widget, motif, dod, widgets, window, mit, contrib, server
+
+cluster 19  (n=  71)  major: sci.space (69%)
+  top words: larson, lunar, universe, satellites, moon, unified, physical, mars
+
+cluster  6  (n=  64)  major: rec.motorcycles (11%)
+  top words: horses, sipps, spectre, muslims, convertible, arlen, rednecks, scsi
+
+cluster 18  (n=  63)  major: talk.politics.misc (33%)
+  top words: militia, government, law, federal, states, constitutional, guard, amendment
+
+cluster  3  (n=  49)  major: talk.politics.misc (24%)
+  top words: kinsey, reisman, sex, sexual, eichel, gay, male, orgasm
+
+cluster 12  (n=  48)  major: sci.electronics (19%)
+  top words: gun, congress, firearms, rkba, handgun, amendment, amend, united
+
+cluster  0  (n=  46)  major: rec.motorcycles (20%)
+  top words: hiv, image, graphics, pub, aids, ftp, ray, images
+
+cluster 15  (n=  36)  major: sci.electronics (14%)
+  top words: inqmind, steppers, bari, stepper, plug, israel, inspiration, bob
+
+cluster 16  (n=  17)  major: alt.atheism (18%)
+  top words: pointer, windows, theists, xlib, atheists, fonts, bobby, implement
+
