@@ -459,6 +459,38 @@ Outputs:
 - `outputs/tables/stability_label_runs.npz`
 - `outputs/figures/transforms/stability_alignment.png`
 
+### 11. Synthetic Whitening Demo
+
+Script:
+
+```powershell
+.\.venv\Scripts\python.exe experiments\whitening_demo.py
+```
+
+Purpose:
+
+- Build a toy anisotropic mixture where true clusters live in low-energy signal directions.
+- Add a high-variance nuisance direction unrelated to the true labels.
+- Show that `L2 + Lloyd` can cluster by the nuisance geometry, while PCA whitening recovers the low-energy clusters.
+
+Current toy result:
+
+| space | ARI | NMI | anisotropy | PR |
+|---|---:|---:|---:|---:|
+| `l2` | ~0.001 | ~0.043 | ~0.893 | ~2.6 |
+| `whiten_l2` | ~0.983 | ~0.969 | ~-0.002 | ~9.9 |
+
+Main lesson:
+
+- Whitening is not just a scoring trick in the BERT pipeline.
+- In a controlled geometry, it can remove a dominant nuisance direction and reveal lower-energy cluster structure.
+- This supports the geometric note, but does not prove the same mechanism is the only cause in BERT.
+
+Outputs:
+
+- `outputs/tables/whitening_demo.csv`
+- `outputs/figures/transforms/whitening_demo.png`
+
 ## What We Know So Far
 
 Current working claims:
@@ -471,6 +503,7 @@ Current working claims:
 6. Whitening dimension matters: `d=100` is currently best, while very high dimensions reintroduce noise.
 7. Silhouette, Davies-Bouldin, and Calinski-Harabasz alone are not reliable indicators of semantic topic alignment.
 8. Resampling stability is partially decoupled from semantic alignment: a stable partition can still be meaningless if it comes from random-init geometry.
+9. A small synthetic demo supports the whitening story: when nuisance anisotropy dominates, whitening can recover low-energy cluster signal.
 
 Short version:
 
@@ -480,9 +513,9 @@ Short version:
 
 Possible next steps:
 
-1. Add a small synthetic whitening demo for the geometric note.
-2. Scale the narrowed confirmation from `n_docs=2000` pilot to the full 20NG dataset.
-3. Add stretch domain separability with Wiki / Reddit / arXiv segments.
+1. Scale the narrowed confirmation from `n_docs=2000` pilot to the full 20NG dataset.
+2. Add stretch domain separability with Wiki / Reddit / arXiv segments.
+3. Polish the artifact note and SOP-ready paragraph.
 
 ## Repository Layout
 
