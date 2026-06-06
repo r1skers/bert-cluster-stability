@@ -6,7 +6,7 @@ Two extreme structures pin down the expected behavior:
 """
 import numpy as np
 
-from src.diagnostics import anisotropy, participation_ratio
+from src.diagnostics import anisotropy, fisher_trace_ratio, participation_ratio
 
 
 # ----- anisotropy -----
@@ -79,3 +79,45 @@ def test_participation_ratio_rank_two_is_about_two():
     X[:, :2] = base
     pr = participation_ratio(X)
     assert abs(pr - 2.0) < 0.2
+
+
+# ----- fisher_trace_ratio -----
+
+def _three_blobs(n_per=80, d=10, sep=10.0, std=0.5, seed=0):
+    rng = np.random.default_rng(seed)
+    centers = np.array(
+        [[sep] + [0.0] * (d - 1),
+         [0.0, sep] + [0.0] * (d - 2),
+         [0.0, 0.0, sep] + [0.0] * (d - 3)],
+        dtype=np.float64,
+    )
+    X = np.vstack([rng.normal(c, std, size=(n_per, d)) for c in centers])
+    y = np.repeat(np.arange(3), n_per)
+    return X, y
+
+
+def test_fisher_ratio_large_for_separated_blobs():
+    """Well-separated blobs: between-class scatter >> within → J >> 1."""
+    X, y = _three_blobs()
+    assert fisher_trace_ratio(X, y) > 20.0
+
+
+def test_fisher_ratio_near_zero_for_random_labels():
+    """Random labels on the same X → class means coincide → J ≈ 0."""
+    X, _ = _three_blobs()
+    rng = np.random.default_rng(1)
+    y_rand = rng.integers(0, 3, size=X.shape[0])
+    assert fisher_trace_ratio(X, y_rand) < 0.2
+
+
+def test_fisher_ratio_eta2_identity():
+    """η² = J/(J+1) should equal tr(S_B)/tr(S_T) computed directly."""
+    X, y = _three_blobs()
+    J = fisher_trace_ratio(X, y)
+    eta2 = J / (J + 1)
+    # direct: between-var fraction of total var
+    mu = X.mean(0)
+    sb = sum(len(X[y == c]) * ((X[y == c].mean(0) - mu) ** 2).sum()
+             for c in np.unique(y))
+    st = ((X - mu) ** 2).sum()
+    assert abs(eta2 - sb / st) < 1e-9

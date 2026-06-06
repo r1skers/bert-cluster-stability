@@ -1,14 +1,26 @@
-# bert-cluster-stability
+# BERT Representation Probes
 
-Interlude research project: probing whether BERT document-segment representations contain layerwise topic-aligned clustering structure.
+> (The git directory is still named `bert-cluster-stability` for history; clustering is now just sub-view 5.1 of a multi-probe series.)
 
-## Research Question
+Probe the **same** cached BERT document-segment representations with three different lenses, layer by layer, and ask why they disagree.
 
-Main question:
+## The three probes
+
+One representation, three rulers of different kinds:
+
+- **5.1 Clustering** (unsupervised) — does topic-aligned structure *self-organize*?
+- **5.2 Linear probe** (supervised, logistic regression) — is topic *linearly decodable*?
+- **5.3 Fisher** (supervised geometry, no classifier trained) — how *separated* are the label groups (within- vs between-class scatter)?
+
+## Unifying finding
+
+> Topic information can live in **low-variance directions**. Methods that **reweight directions** (PCA whitening, LDA's `S_W⁻¹`, logistic-regression weights) can read it; variance-respecting geometry probes (naive clustering, the Fisher trace ratio) miss it. That is why random-init BERT looks empty to clustering yet sits well above chance to a linear probe — the topic signal is present, just buried in low-variance directions.
+
+The clustering view (5.1) is documented in detail below; see **Supervised Linear Probe (Artifact 5.2 / 5.3)** for the probe views.
+
+## Research Question (5.1 clustering view)
 
 > Do BERT layerwise document-segment representations contain clustering structure that becomes more topic-aligned across layers?
-
-Working interpretation:
 
 - The object of study is **layerwise clustering structure** in BERT representations.
 - KMeans/Lloyd-style methods are used as probes, not as the final research object.
@@ -77,8 +89,8 @@ Outputs:
 Scripts:
 
 ```powershell
-.\.venv\Scripts\python.exe experiments\run_pilot_metrics.py --seeds 0 1 2 3 4
-.\.venv\Scripts\python.exe experiments\plot_pilot.py
+.\.venv\Scripts\python.exe experiments\clustering\run_pilot_metrics.py --seeds 0 1 2 3 4
+.\.venv\Scripts\python.exe experiments\clustering\plot_pilot.py
 ```
 
 Variable being tested:
@@ -103,7 +115,7 @@ Main lesson:
 
 Outputs:
 
-- `outputs/tables/pilot_metrics_l2_seeds.csv`
+- `outputs/tables/clustering/pilot_metrics_l2_seeds.csv`
 - `outputs/figures/pilot/pilot_alignment.png`
 - `outputs/figures/pilot/pilot_diagnostics.png`
 - `outputs/figures/pilot/pilot_geometry_controls.png`
@@ -113,8 +125,8 @@ Outputs:
 Script:
 
 ```powershell
-.\.venv\Scripts\python.exe experiments\sweep_transforms.py
-.\.venv\Scripts\python.exe experiments\plot_transform_sweep.py
+.\.venv\Scripts\python.exe experiments\clustering\sweep_transforms.py
+.\.venv\Scripts\python.exe experiments\clustering\plot_transform_sweep.py
 ```
 
 Variable being tested:
@@ -149,7 +161,7 @@ Main lesson:
 
 Outputs:
 
-- `outputs/tables/transform_sweep.csv`
+- `outputs/tables/clustering/transform_sweep.csv`
 - `outputs/figures/transforms/transform_sweep_alignment.png`
 - `outputs/figures/transforms/transform_sweep_geometry.png`
 
@@ -158,15 +170,15 @@ Outputs:
 Scripts:
 
 ```powershell
-.\.venv\Scripts\python.exe experiments\sweep_transforms.py --transforms l2 centered_l2 pca100_l2 whiten50_l2 whiten100_l2 --clusterers lloyd spherical --output outputs/tables/clusterer_sweep.csv
-.\.venv\Scripts\python.exe experiments\plot_clusterer_sweep.py
+.\.venv\Scripts\python.exe experiments\clustering\sweep_transforms.py --transforms l2 centered_l2 pca100_l2 whiten50_l2 whiten100_l2 --clusterers lloyd spherical --output outputs/tables/clustering/clusterer_sweep.csv
+.\.venv\Scripts\python.exe experiments\clustering\plot_clusterer_sweep.py
 ```
 
 Agglomerative control under the current best transform:
 
 ```powershell
-.\.venv\Scripts\python.exe experiments\sweep_transforms.py --layers 12 --transforms whiten100_l2 --clusterers lloyd spherical agglo_cosine agglo_ward gmm_diag gmm_full --models pretrained --output outputs/tables/clusterer_sweep_gmm.csv
-.\.venv\Scripts\python.exe experiments\plot_clusterer_sweep.py --csv outputs/tables/clusterer_sweep_gmm.csv --filename clusterer_sweep_gmm_alignment.png
+.\.venv\Scripts\python.exe experiments\clustering\sweep_transforms.py --layers 12 --transforms whiten100_l2 --clusterers lloyd spherical agglo_cosine agglo_ward gmm_diag gmm_full --models pretrained --output outputs/tables/clustering/clusterer_sweep_gmm.csv
+.\.venv\Scripts\python.exe experiments\clustering\plot_clusterer_sweep.py --csv outputs/tables/clustering/clusterer_sweep_gmm.csv --filename clusterer_sweep_gmm_alignment.png
 ```
 
 Variable being tested:
@@ -204,9 +216,9 @@ Main lesson:
 
 Outputs:
 
-- `outputs/tables/clusterer_sweep.csv`
-- `outputs/tables/clusterer_sweep_agglo.csv`
-- `outputs/tables/clusterer_sweep_gmm.csv`
+- `outputs/tables/clustering/clusterer_sweep.csv`
+- `outputs/tables/clustering/clusterer_sweep_agglo.csv`
+- `outputs/tables/clustering/clusterer_sweep_gmm.csv`
 - `outputs/figures/transforms/clusterer_sweep_alignment.png`
 - `outputs/figures/transforms/clusterer_sweep_agglo_alignment.png`
 - `outputs/figures/transforms/clusterer_sweep_gmm_alignment.png`
@@ -216,8 +228,8 @@ Outputs:
 Scripts:
 
 ```powershell
-.\.venv\Scripts\python.exe experiments\sweep_pooling.py
-.\.venv\Scripts\python.exe experiments\plot_pooling_sweep.py
+.\.venv\Scripts\python.exe experiments\clustering\sweep_pooling.py
+.\.venv\Scripts\python.exe experiments\clustering\plot_pooling_sweep.py
 ```
 
 Variable being tested:
@@ -248,7 +260,7 @@ Main lesson:
 
 Outputs:
 
-- `outputs/tables/pooling_sweep.csv`
+- `outputs/tables/clustering/pooling_sweep.csv`
 - `outputs/figures/transforms/pooling_sweep_alignment.png`
 
 ### 6. K Sweep
@@ -256,8 +268,8 @@ Outputs:
 Scripts:
 
 ```powershell
-.\.venv\Scripts\python.exe experiments\sweep_k.py --models pretrained random
-.\.venv\Scripts\python.exe experiments\plot_k_sweep.py
+.\.venv\Scripts\python.exe experiments\clustering\sweep_k.py --models pretrained random
+.\.venv\Scripts\python.exe experiments\clustering\plot_k_sweep.py
 ```
 
 Variable being tested:
@@ -288,7 +300,7 @@ Main lesson:
 
 Outputs:
 
-- `outputs/tables/k_sweep.csv`
+- `outputs/tables/clustering/k_sweep.csv`
 - `outputs/figures/transforms/k_sweep_alignment.png`
 
 ### 7. Best-Recipe Layer Sweep
@@ -296,8 +308,8 @@ Outputs:
 Scripts:
 
 ```powershell
-.\.venv\Scripts\python.exe experiments\sweep_transforms.py --layers 0 1 2 3 4 5 6 7 8 9 10 11 12 --transforms whiten100_l2 --clusterers spherical --models pretrained random --output outputs/tables/layer_sweep_best_recipe.csv
-.\.venv\Scripts\python.exe experiments\plot_best_recipe_layer_sweep.py
+.\.venv\Scripts\python.exe experiments\clustering\sweep_transforms.py --layers 0 1 2 3 4 5 6 7 8 9 10 11 12 --transforms whiten100_l2 --clusterers spherical --models pretrained random --output outputs/tables/clustering/layer_sweep_best_recipe.csv
+.\.venv\Scripts\python.exe experiments\clustering\plot_best_recipe_layer_sweep.py
 ```
 
 Variable being tested:
@@ -325,7 +337,7 @@ Main lesson:
 
 Outputs:
 
-- `outputs/tables/layer_sweep_best_recipe.csv`
+- `outputs/tables/clustering/layer_sweep_best_recipe.csv`
 - `outputs/figures/transforms/best_recipe_layer_sweep.png`
 
 ### 8. Whitening Dimension Sweep
@@ -333,8 +345,8 @@ Outputs:
 Scripts:
 
 ```powershell
-.\.venv\Scripts\python.exe experiments\sweep_whitening_dims.py
-.\.venv\Scripts\python.exe experiments\plot_whitening_dim_sweep.py
+.\.venv\Scripts\python.exe experiments\clustering\sweep_whitening_dims.py
+.\.venv\Scripts\python.exe experiments\clustering\plot_whitening_dim_sweep.py
 ```
 
 Variable being tested:
@@ -368,7 +380,7 @@ Main lesson:
 
 Outputs:
 
-- `outputs/tables/whitening_dim_sweep.csv`
+- `outputs/tables/clustering/whitening_dim_sweep.csv`
 - `outputs/figures/transforms/whitening_dim_sweep.png`
 
 ### 9. Cluster Interpretation
@@ -376,7 +388,7 @@ Outputs:
 Script:
 
 ```powershell
-.\.venv\Scripts\python.exe experiments\interpret_clusters.py --layers 12 --k 20 --transform whiten100_l2 --clusterer spherical --seed 0
+.\.venv\Scripts\python.exe experiments\clustering\interpret_clusters.py --layers 12 --k 20 --transform whiten100_l2 --clusterer spherical --seed 0
 ```
 
 Purpose:
@@ -389,9 +401,9 @@ Purpose:
 Useful K comparison:
 
 ```powershell
-.\.venv\Scripts\python.exe experiments\interpret_clusters.py --layers 12 --k 10 --transform whiten100_l2 --clusterer spherical --seed 0
-.\.venv\Scripts\python.exe experiments\interpret_clusters.py --layers 12 --k 20 --transform whiten100_l2 --clusterer spherical --seed 0
-.\.venv\Scripts\python.exe experiments\interpret_clusters.py --layers 12 --k 50 --transform whiten100_l2 --clusterer spherical --seed 0
+.\.venv\Scripts\python.exe experiments\clustering\interpret_clusters.py --layers 12 --k 10 --transform whiten100_l2 --clusterer spherical --seed 0
+.\.venv\Scripts\python.exe experiments\clustering\interpret_clusters.py --layers 12 --k 20 --transform whiten100_l2 --clusterer spherical --seed 0
+.\.venv\Scripts\python.exe experiments\clustering\interpret_clusters.py --layers 12 --k 50 --transform whiten100_l2 --clusterer spherical --seed 0
 ```
 
 Main lesson:
@@ -413,8 +425,8 @@ Outputs:
 Scripts:
 
 ```powershell
-.\.venv\Scripts\python.exe experiments\run_stability.py
-.\.venv\Scripts\python.exe experiments\plot_stability.py
+.\.venv\Scripts\python.exe experiments\clustering\run_stability.py
+.\.venv\Scripts\python.exe experiments\clustering\plot_stability.py
 ```
 
 Variable being tested:
@@ -455,8 +467,8 @@ Current pilot summary:
 
 Outputs:
 
-- `outputs/tables/stability_pilot.csv`
-- `outputs/tables/stability_label_runs.npz`
+- `outputs/tables/clustering/stability_pilot.csv`
+- `outputs/tables/clustering/stability_label_runs.npz`
 - `outputs/figures/transforms/stability_alignment.png`
 
 ### 11. Synthetic Whitening Demo
@@ -464,7 +476,7 @@ Outputs:
 Script:
 
 ```powershell
-.\.venv\Scripts\python.exe experiments\whitening_demo.py
+.\.venv\Scripts\python.exe experiments\clustering\whitening_demo.py
 ```
 
 Purpose:
@@ -488,8 +500,52 @@ Main lesson:
 
 Outputs:
 
-- `outputs/tables/whitening_demo.csv`
+- `outputs/tables/clustering/whitening_demo.csv`
 - `outputs/figures/transforms/whitening_demo.png`
+
+## Supervised Linear Probe (Artifact 5.2 / 5.3)
+
+A second view on the same cached embeddings: instead of asking what
+structure clustering *finds* unsupervised, ask how much topic
+information is *linearly readable* with supervision. 5.2 uses
+multinomial logistic regression (convex optimum); 5.3 uses Fisher LDA
+(Gaussian analytical optimum). Both go through one shared harness
+(`src/probe.py`); the run script just switches the estimator.
+
+Scripts:
+
+```powershell
+.\.venv\Scripts\python.exe experiments\probe\run_linear_probe.py                                  # 5.2 logreg
+.\.venv\Scripts\python.exe experiments\probe\plot_linear_probe.py
+.\.venv\Scripts\python.exe experiments\probe\run_linear_probe.py --probe lda --output outputs/tables/probe/lda_probe.csv   # 5.3 LDA
+.\.venv\Scripts\python.exe experiments\probe\plot_linear_probe.py --csv outputs/tables/probe/lda_probe.csv --filename lda_probe_accuracy.png
+```
+
+Protocol: 5-fold stratified CV, `StandardScaler` inside the pipeline
+(fit per fold, no leakage), accuracy + macro-F1, with chance (1/20)
+and majority baselines.
+
+Current pilot result (`n_docs=2000`, CV accuracy):
+
+| | pretrained L0 | pretrained L12 | random-init L0 | random-init L12 |
+|---|---:|---:|---:|---:|
+| logistic regression (5.2) | ~0.563 | ~0.623 | ~0.380 | ~0.275 |
+| Fisher LDA (5.3) | ~0.597 | ~0.636 | ~0.372 | ~0.283 |
+
+Main lesson (the cross-view contrast with 5.1):
+
+- Both supervised probes agree closely, so the curve is not an
+  artifact of one estimator.
+- Unlike clustering (where random-init sits near the floor), a linear
+  probe reads topic information well above chance even from
+  random-init BERT — and that readability *decays* with depth, while
+  pretrained BERT *rises*. The topic signal is present in random-init;
+  its anisotropic geometry just hides it from unsupervised clustering.
+
+Outputs:
+
+- `outputs/tables/probe/linear_probe.csv`, `outputs/tables/probe/lda_probe.csv`
+- `outputs/figures/probe/linear_probe_accuracy.png`, `outputs/figures/probe/lda_probe_accuracy.png`
 
 ## What We Know So Far
 
@@ -519,16 +575,26 @@ Possible next steps:
 
 ## Repository Layout
 
+Scripts are grouped by sub-artifact of the BERT representation-probes
+umbrella. `extract_embeddings.py` stays at the top of `experiments/`
+because the cache it produces is shared by every view.
+
 ```text
-src/                    importable library code
-experiments/            runnable experiment scripts
-tests/                  unit tests
-outputs/cache/          cached BERT layer embeddings, gitignored
-outputs/tables/         CSV metrics and sweep results
-outputs/interpret/      cluster summaries and c-TF-IDF keywords
-outputs/figures/pilot/  baseline pilot figures
-outputs/figures/transforms/
-outputs/figures/interpret/
+src/                          importable library code (shared)
+  probe.py                    supervised linear-probe harness (5.2 + 5.3)
+experiments/
+  extract_embeddings.py       shared cache producer
+  clustering/                 Artifact 5.1 (unsupervised KMeans view)
+  probe/                      Artifact 5.2 logistic regression + 5.3 Fisher LDA
+tests/                        unit tests
+outputs/cache/                cached BERT layer embeddings, gitignored
+outputs/tables/clustering/    5.1 CSV metrics and sweep results
+outputs/tables/probe/         5.2 / 5.3 probe-accuracy CSVs
+outputs/interpret/            cluster summaries and c-TF-IDF keywords
+outputs/figures/pilot/        5.1 baseline pilot figures
+outputs/figures/transforms/   5.1 sweep figures
+outputs/figures/interpret/    5.1 cluster-topic heatmaps
+outputs/figures/probe/        5.2 / 5.3 probe-accuracy figures
 ```
 
 ## Development

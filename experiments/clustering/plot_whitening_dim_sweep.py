@@ -1,13 +1,13 @@
 r"""Plot PCA whitening dimension sweep.
 
 Input:
-    outputs/tables/whitening_dim_sweep.csv
+    outputs/tables/clustering/whitening_dim_sweep.csv
 
 Output:
     outputs/figures/transforms/whitening_dim_sweep.png
 
 Run from repo root:
-    .\.venv\Scripts\python.exe experiments\plot_whitening_dim_sweep.py
+    .\.venv\Scripts\python.exe experiments\clustering\plot_whitening_dim_sweep.py
 """
 import argparse
 import csv
@@ -30,7 +30,7 @@ LABELS = {
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser()
-    p.add_argument("--csv", default="outputs/tables/whitening_dim_sweep.csv")
+    p.add_argument("--csv", default="outputs/tables/clustering/whitening_dim_sweep.csv")
     p.add_argument("--outdir", default="outputs/figures/transforms")
     return p.parse_args()
 

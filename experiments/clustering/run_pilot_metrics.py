@@ -7,10 +7,10 @@ compute:
     diagnostics: anisotropy, participation_ratio   (K-independent)
 
 Inputs:  cached embeddings from `extract_embeddings.py`
-Output:  outputs/tables/pilot_metrics.csv
+Output:  outputs/tables/clustering/pilot_metrics.csv
 
 Run from repo root:
-    .\.venv\Scripts\python.exe experiments\run_pilot_metrics.py
+    .\.venv\Scripts\python.exe experiments\clustering\run_pilot_metrics.py
 """
 import argparse
 import csv
@@ -20,7 +20,7 @@ from pathlib import Path
 
 import numpy as np
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
@@ -44,7 +44,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--min_chars", type=int, default=30)
     p.add_argument("--model_name", type=str, default="bert-base-uncased")
     p.add_argument("--random_init_seed", type=int, default=1)
-    p.add_argument("--output", type=str, default="outputs/tables/pilot_metrics.csv")
+    p.add_argument("--output", type=str, default="outputs/tables/clustering/pilot_metrics.csv")
     return p.parse_args()
 
 

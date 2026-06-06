@@ -1,13 +1,13 @@
 r"""Plot cached layer-pooling sweep results.
 
 Input:
-    outputs/tables/pooling_sweep.csv
+    outputs/tables/clustering/pooling_sweep.csv
 
 Output:
     outputs/figures/transforms/pooling_sweep_alignment.png
 
 Run from repo root:
-    .\.venv\Scripts\python.exe experiments\plot_pooling_sweep.py
+    .\.venv\Scripts\python.exe experiments\clustering\plot_pooling_sweep.py
 """
 import argparse
 import csv
@@ -23,7 +23,7 @@ ORDER = ["layer12", "last4_mean", "last4_concat"]
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser()
-    p.add_argument("--csv", default="outputs/tables/pooling_sweep.csv")
+    p.add_argument("--csv", default="outputs/tables/clustering/pooling_sweep.csv")
     p.add_argument("--outdir", default="outputs/figures/transforms")
     return p.parse_args()
 

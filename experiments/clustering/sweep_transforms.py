@@ -8,7 +8,7 @@ Default run is intentionally small:
     pretrained BERT, layer 12, K=20, seeds 0..4, all transforms
 
 Run from repo root:
-    .\.venv\Scripts\python.exe experiments\sweep_transforms.py
+    .\.venv\Scripts\python.exe experiments\clustering\sweep_transforms.py
 """
 import argparse
 import csv
@@ -23,7 +23,7 @@ from sklearn.metrics import (
     silhouette_score,
 )
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
@@ -72,7 +72,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--min_chars", type=int, default=30)
     p.add_argument("--model_name", type=str, default="bert-base-uncased")
     p.add_argument("--random_init_seed", type=int, default=1)
-    p.add_argument("--output", type=str, default="outputs/tables/transform_sweep.csv")
+    p.add_argument("--output", type=str, default="outputs/tables/clustering/transform_sweep.csv")
     return p.parse_args()
 
 

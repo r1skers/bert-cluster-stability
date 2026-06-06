@@ -1,7 +1,7 @@
 r"""Plot the W1 pilot result: three figures from one CSV.
 
 Inputs:
-    outputs/tables/pilot_metrics_l2_seeds.csv
+    outputs/tables/clustering/pilot_metrics_l2_seeds.csv
         (mode='l2', K=20, 5 KMeans seeds, two model variants)
 
 Outputs (300 dpi PNGs):
@@ -21,7 +21,7 @@ Outputs (300 dpi PNGs):
         compactness. Some even favor random-init, which is the point.
 
 Run from repo root:
-    .\.venv\Scripts\python.exe experiments\plot_pilot.py
+    .\.venv\Scripts\python.exe experiments\clustering\plot_pilot.py
 """
 import argparse
 import csv
@@ -30,7 +30,7 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Dict, List, Tuple
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
@@ -50,7 +50,7 @@ def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser()
     p.add_argument(
         "--csv",
-        default="outputs/tables/pilot_metrics_l2_seeds.csv",
+        default="outputs/tables/clustering/pilot_metrics_l2_seeds.csv",
         help="Input CSV produced by run_pilot_metrics.py with --seeds 0 1 2 3 4",
     )
     p.add_argument(

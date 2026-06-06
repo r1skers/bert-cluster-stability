@@ -1,13 +1,13 @@
 r"""Plot layer sweep under the current best clustering recipe.
 
 Input:
-    outputs/tables/layer_sweep_best_recipe.csv
+    outputs/tables/clustering/layer_sweep_best_recipe.csv
 
 Output:
     outputs/figures/transforms/best_recipe_layer_sweep.png
 
 Run from repo root:
-    .\.venv\Scripts\python.exe experiments\plot_best_recipe_layer_sweep.py
+    .\.venv\Scripts\python.exe experiments\clustering\plot_best_recipe_layer_sweep.py
 """
 import argparse
 import csv
@@ -32,7 +32,7 @@ LABELS = {
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser()
-    p.add_argument("--csv", default="outputs/tables/layer_sweep_best_recipe.csv")
+    p.add_argument("--csv", default="outputs/tables/clustering/layer_sweep_best_recipe.csv")
     p.add_argument("--outdir", default="outputs/figures/transforms")
     return p.parse_args()
 

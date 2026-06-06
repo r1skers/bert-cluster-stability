@@ -1,7 +1,7 @@
 r"""Plot Lloyd vs spherical KMeans comparison.
 
 Input:
-    outputs/tables/clusterer_sweep.csv
+    outputs/tables/clustering/clusterer_sweep.csv
 
 Output:
     outputs/figures/transforms/clusterer_sweep_alignment.png
@@ -36,7 +36,7 @@ COLORS = {
 
 def parse_args():
     p = argparse.ArgumentParser()
-    p.add_argument("--csv", default="outputs/tables/clusterer_sweep.csv")
+    p.add_argument("--csv", default="outputs/tables/clustering/clusterer_sweep.csv")
     p.add_argument("--outdir", default="outputs/figures/transforms")
     p.add_argument("--filename", default="clusterer_sweep_alignment.png")
     return p.parse_args()

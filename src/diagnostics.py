@@ -94,3 +94,59 @@ def participation_ratio(X: np.ndarray) -> float:
     tr_S = np.trace(S)
     tr_S2 = np.sum(S * S)                          # = tr(S @ S)
     return float(tr_S ** 2 / max(tr_S2, 1e-30))
+
+
+def fisher_trace_ratio(X: np.ndarray, y: np.ndarray) -> float:
+    """Fisher separability criterion (trace form): tr(S_B) / tr(S_W).
+
+    This is the *supervised* geometry counterpart to anisotropy /
+    participation ratio: it uses the labels `y` to ask how separated
+    the classes are, in a way that needs NO matrix inversion.
+
+    Definitions
+    -----------
+        tr(S_W) = Σ_c Σ_{i∈c} ||x_i − μ_c||²     within-class scatter
+        tr(S_B) = Σ_c n_c ||μ_c − μ||²            between-class scatter
+        tr(S_T) = Σ_i ||x_i − μ||² = tr(S_B) + tr(S_W)
+
+        Fisher ratio  J = tr(S_B) / tr(S_W)
+
+    Interpretation
+    --------------
+        J large  → class means far apart relative to within-class spread
+                   (classes compact and well separated).
+        J small  → classes overlap; means close vs the scatter.
+
+    The bounded sibling — between-class variance fraction — is a
+    one-liner from J:  η² = tr(S_B)/tr(S_T) = J / (J + 1) ∈ [0, 1].
+
+    Why the *trace* form (not the full Fisher eigenproblem): the full
+    criterion needs S_W^{-1}, but S_W (d×d) estimated from few samples
+    per class is near-singular at BERT scale (768 dims, ~70-114 rows
+    per class). The trace ratio is the well-conditioned, inversion-free
+    separability scalar — the geometric diagnostic, distinct from the
+    LDA *classifier* (which handles the singularity via shrinkage).
+
+    Parameters
+    ----------
+    X : (N, d) array
+        Representation matrix. Caller decides preprocessing (e.g.
+        standardize) — this function is pure geometry on the given X.
+    y : (N,) int array
+        Class labels.
+
+    Returns
+    -------
+    float
+        tr(S_B) / tr(S_W). Non-negative; 0 only if all class means
+        coincide.
+    """
+    mu = X.mean(axis=0)
+    sw = 0.0
+    sb = 0.0
+    for c in np.unique(y):
+        Xc = X[y == c]
+        mu_c = Xc.mean(axis=0)
+        sw += float(((Xc - mu_c) ** 2).sum())
+        sb += float(len(Xc) * ((mu_c - mu) ** 2).sum())
+    return float(sb / max(sw, 1e-30))

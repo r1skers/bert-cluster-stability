@@ -9,7 +9,7 @@ the note's explanation:
     direction and can recover lower-energy cluster structure.
 
 Run from repo root:
-    .\.venv\Scripts\python.exe experiments\whitening_demo.py
+    .\.venv\Scripts\python.exe experiments\clustering\whitening_demo.py
 """
 import argparse
 import csv
@@ -21,7 +21,7 @@ import numpy as np
 from sklearn.cluster import KMeans
 from sklearn.metrics import adjusted_rand_score, normalized_mutual_info_score
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
@@ -42,7 +42,7 @@ def parse_args():
     p.add_argument("--extra_noise_dims", type=int, default=7)
     p.add_argument("--extra_noise_scale", type=float, default=0.35)
     p.add_argument("--outfig", default="outputs/figures/transforms/whitening_demo.png")
-    p.add_argument("--outcsv", default="outputs/tables/whitening_demo.csv")
+    p.add_argument("--outcsv", default="outputs/tables/clustering/whitening_demo.csv")
     return p.parse_args()
 
 

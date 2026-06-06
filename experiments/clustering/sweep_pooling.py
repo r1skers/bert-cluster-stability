@@ -9,7 +9,7 @@ Default comparison:
     clusterer = spherical
 
 Run from repo root:
-    .\.venv\Scripts\python.exe experiments\sweep_pooling.py
+    .\.venv\Scripts\python.exe experiments\clustering\sweep_pooling.py
 """
 import argparse
 import csv
@@ -24,7 +24,7 @@ from sklearn.metrics import (
     silhouette_score,
 )
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
@@ -70,7 +70,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--max_length", type=int, default=512)
     p.add_argument("--min_chars", type=int, default=30)
     p.add_argument("--model_name", type=str, default="bert-base-uncased")
-    p.add_argument("--output", type=str, default="outputs/tables/pooling_sweep.csv")
+    p.add_argument("--output", type=str, default="outputs/tables/clustering/pooling_sweep.csv")
     return p.parse_args()
 
 

@@ -19,7 +19,7 @@ rows where clusters concentrate on specific topics. That visual
 contrast is what NMI(L) = 0.07 -> 0.36 looks like in pixels.
 
 Run from repo root:
-    .\.venv\Scripts\python.exe experiments\interpret_clusters.py
+    .\.venv\Scripts\python.exe experiments\clustering\interpret_clusters.py
 """
 import argparse
 import csv
@@ -29,7 +29,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 

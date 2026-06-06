@@ -1,14 +1,14 @@
 r"""Plot transform sweep results.
 
 Input:
-    outputs/tables/transform_sweep.csv
+    outputs/tables/clustering/transform_sweep.csv
 
 Outputs:
     outputs/figures/transforms/transform_sweep_alignment.png
     outputs/figures/transforms/transform_sweep_geometry.png
 
 Run from repo root:
-    .\.venv\Scripts\python.exe experiments\plot_transform_sweep.py
+    .\.venv\Scripts\python.exe experiments\clustering\plot_transform_sweep.py
 """
 import argparse
 import csv
@@ -36,7 +36,7 @@ ORDER = [
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser()
-    p.add_argument("--csv", default="outputs/tables/transform_sweep.csv")
+    p.add_argument("--csv", default="outputs/tables/clustering/transform_sweep.csv")
     p.add_argument("--outdir", default="outputs/figures/transforms")
     return p.parse_args()
 

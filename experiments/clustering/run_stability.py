@@ -10,10 +10,10 @@ Protocol:
     -> pairwise ARI across the B full-label partitions.
 
 Run from repo root:
-    .\.venv\Scripts\python.exe experiments\run_stability.py
+    .\.venv\Scripts\python.exe experiments\clustering\run_stability.py
 
 Quick smoke test:
-    .\.venv\Scripts\python.exe experiments\run_stability.py --n_runs 5 --models pretrained
+    .\.venv\Scripts\python.exe experiments\clustering\run_stability.py --n_runs 5 --models pretrained
 """
 import argparse
 import csv
@@ -23,7 +23,7 @@ from pathlib import Path
 
 import numpy as np
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
@@ -71,8 +71,8 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--min_chars", type=int, default=30)
     p.add_argument("--model_name", type=str, default="bert-base-uncased")
     p.add_argument("--random_init_seed", type=int, default=1)
-    p.add_argument("--output", type=str, default="outputs/tables/stability_pilot.csv")
-    p.add_argument("--labels_output", type=str, default="outputs/tables/stability_label_runs.npz")
+    p.add_argument("--output", type=str, default="outputs/tables/clustering/stability_pilot.csv")
+    p.add_argument("--labels_output", type=str, default="outputs/tables/clustering/stability_label_runs.npz")
     return p.parse_args()
 
 

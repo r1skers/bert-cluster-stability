@@ -1,7 +1,7 @@
 r"""Plot resampling stability against topic alignment.
 
 Input:
-    outputs/tables/stability_pilot.csv
+    outputs/tables/clustering/stability_pilot.csv
 
 Output:
     outputs/figures/transforms/stability_alignment.png
@@ -26,7 +26,7 @@ MARKERS = {
 
 def parse_args():
     p = argparse.ArgumentParser()
-    p.add_argument("--csv", default="outputs/tables/stability_pilot.csv")
+    p.add_argument("--csv", default="outputs/tables/clustering/stability_pilot.csv")
     p.add_argument("--outdir", default="outputs/figures/transforms")
     p.add_argument("--filename", default="stability_alignment.png")
     return p.parse_args()

@@ -1,13 +1,13 @@
 r"""Plot K sweep under fixed representation recipe.
 
 Input:
-    outputs/tables/k_sweep.csv
+    outputs/tables/clustering/k_sweep.csv
 
 Output:
     outputs/figures/transforms/k_sweep_alignment.png
 
 Run from repo root:
-    .\.venv\Scripts\python.exe experiments\plot_k_sweep.py
+    .\.venv\Scripts\python.exe experiments\clustering\plot_k_sweep.py
 """
 import argparse
 import csv
@@ -26,7 +26,7 @@ MODEL_COLORS = {
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser()
-    p.add_argument("--csv", default="outputs/tables/k_sweep.csv")
+    p.add_argument("--csv", default="outputs/tables/clustering/k_sweep.csv")
     p.add_argument("--outdir", default="outputs/figures/transforms")
     return p.parse_args()
 
